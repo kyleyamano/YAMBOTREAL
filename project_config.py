@@ -1,0 +1,18 @@
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+
+DATA_DIR = BASE_DIR / "data"
+
+RAW_DIR = DATA_DIR / "raw"
+PROCESSED_DIR = DATA_DIR / "processed"
+CONTINUOUS_DIR = DATA_DIR / "continuous"
+
+NQ_RAW = RAW_DIR / "NQ"
+MNQ_RAW = RAW_DIR / "MNQ"
+
+NQ_PROCESSED = PROCESSED_DIR / "NQ"
+MNQ_PROCESSED = PROCESSED_DIR / "MNQ"
+
+NQ_CONTINUOUS = CONTINUOUS_DIR / "NQ"
+MNQ_CONTINUOUS = CONTINUOUS_DIR / "MNQ"
