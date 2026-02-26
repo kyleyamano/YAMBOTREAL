@@ -42,6 +42,8 @@ def resample_ohlc(df_1m: pd.DataFrame, rule: str) -> pd.DataFrame:
     if "volume" in df_1m.columns:
         agg["volume"] = "sum"
 
+    # Normalize deprecated aliases (e.g. '5T' -> '5min', '1D' stays '1D')
+    rule = rule.replace("T", "min") if rule.endswith("T") or "T" in rule else rule
     out = df_1m.resample(rule, label="right", closed="right").agg(agg).dropna()
     return out
 
